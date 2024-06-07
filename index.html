@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tram's Portfolio</title>
+    <link rel="stylesheet" href="Libraries/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="Css/style.css" />
+    <style>
+  
+      .portfolio {
+        padding: 40px 0;
+      }
+  
+      .section-title {
+        text-align: center;
+        font-size: 2em;
+        margin-bottom: 10px;
+      }
+  
+      .section-subtitle {
+        text-align: center;
+        font-size: 1em;
+        color: #aaa;
+        margin-bottom: 40px;
+      }
+  
+      .portfolio-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+      }
+  
+      .portfolio-content {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        flex: 1 1 calc(33.33% - 20px);
+        box-sizing: border-box;
+        margin: 10px;
+      }
+  
+      .portfolio-img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 15px;
+      }
+  
+      .portfolio-title {
+        font-size: 1.25em;
+        margin-bottom: 10px;
+      }
+  
+      .portfolio-description {
+        font-size: 1em;
+        margin-bottom: 15px;
+        color: #aaa;
+      }
+  
+      .portfolio-button {
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 15px;
+        border: none;
+        background: #007bff;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+  
+      .portfolio-button:hover {
+        background: #0056b3;
+      }
+  
+      .button-icon {
+        margin-left: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header  -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav-logo">Tram Le</a>
+
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list grid">
+            <li class="nav-item">
+              <a href="#home" class="nav-link"
+                ><i class="fa-solid fa-house nav-icon"></i> Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#about" class="nav-link"
+                ><i class="fa-solid fa-user nav-icon"></i> About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#experience" class="nav-link"
+                ><i class="fa-solid fa-briefcase nav-icon"></i> Experience</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#portfolio" class="nav-link"
+                ><i class="fa-solid fa-file nav-icon"></i> Projects</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#skills" class="nav-link"
+                ><i class="fa-solid fa-image nav-icon"></i> Skills</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link"
+                ><i class="fa-solid fa-message nav-icon"></i> Contact</a
+              >
+            </li>
+          </ul>
+          <i class="fa-solid fa-xmark nav-close" id="nav-close"></i>
+        </div>
+
+        <div class="nav-btns">
+          <!-- theme btn  -->
+          <i class="fa-regular fa-moon change-theme" id="theme-button"></i>
+
+          <div class="nav-toggle" id="nav-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="home section" id="home">
+        <div class="home-container container grid">
+          <div class="home-content grid">
+            <div class="home-social">
+              <a
+                href="https://www.linkedin.com/in/bao-tram-le/"
+                target="_blank"
+                class="home-social-icon"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a
+                href="https://github.com/lvbaotram"
+                target="_blank"
+                class="home-social-icon"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+
+            <div class="home-img">
+              <img src="Assets/Icons/me.jpg" alt="Hình ảnh của tôi" class="home-blob-img">
+            </div>
+            <div class="home-data">
+              <h1 class="home-title">Hi, I am Tram</h1>
+              <h3 class="home-subtitle">Data Analyst</h3>
+              <p class="home-description">
+                Passionate Data Science in the future.
+              </p>
+              <a href="#contact" class="button button-flex">
+                Contact Me <i class="fa-regular fa-envelope button-icon"></i>
+              </a>
+            </div>
+          </div>
+          <div class="home-scroll">
+            <a href="#about" class="home-scroll-button button-flex">
+              <!-- <i class="fa-solid fa-computer-mouse home-scroll-mouse"></i> -->
+              <img class="home-scroll-mouse" src="Assets/mouse.svg" alt="" />
+              <span class="home-scroll-name">Scroll down</span>
+              <i class="fa-solid fa-angles-down home-scroll-arrow"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="about section" id="about">
+        <h2 class="section-title">About Me</h2>
+        <span class="section-subtitle">My Introduction</span>
+    
+        <div class="about-container container">
+            <div class="about-data">
+                <p class="about-description">
+                    I am a third-year student at the University of Science. I am passionate about computer science and eager to gain practical experience through internships and projects. My goal is to become a proficient software developer, and I am constantly learning new technologies to enhance my skills.
+                </p>
+            
+                <div class="about-buttons">
+                    <a download="" href="/Assets/Resume.pdf" class="button button-flex">
+                        Download Resume<i class="fa-solid fa-file-arrow-down button-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+      </section>
+    
+      <!--Portfolio-->
+      <section class="portfolio section" id="portfolio">
+        <h2 class="section-title">Projects</h2>
+        <span class="section-subtitle">Most recent work</span>
+    
+        <div class="portfolio-container">
+          <!-- project1  -->
+          <div class="portfolio-content">
+            <img src="Assets/project1.svg" alt="Project 1" class="portfolio-img" />
+            <div class="portfolio-data">
+              <h3 class="portfolio-title">Project 1</h3>
+              <p class="portfolio-description">
+                Coming soon...
+              </p>
+              <a
+                href="https://github.com/harisahmad59/CodeHype-Responsive-Website"
+                target="_blank"
+                class="button button-flex button-small portfolio-button"
+              >Project Link
+                <i class="fa-solid fa-arrow-right button-icon"></i></a>
+            </div>
+          </div>
+          <!-- project2  -->
+          <div class="portfolio-content">
+            <img src="Assets/project2.svg" alt="Project 2" class="portfolio-img" />
+            <div class="portfolio-data">
+              <h3 class="portfolio-title">Project 2</h3>
+              <p class="portfolio-description">
+                Coming soon...
+              </p>
+              <a
+                href="https://github.com/harisahmad59/Hypefolio"
+                target="_blank"
+                class="button button-flex button-small portfolio-button"
+              >Project Link
+                <i class="fa-solid fa-arrow-right button-icon"></i></a>
+            </div>
+          </div>
+          <!-- project3  -->
+          <div class="portfolio-content">
+            <img src="Assets/project3.svg" alt="Project 3" class="portfolio-img" />
+            <div class="portfolio-data">
+              <h3 class="portfolio-title">Project 1</h3>
+              <p class="portfolio-description">
+                Coming soon.
+              </p>
+              <a
+                href="https://github.com/harisahmad59/Hypefolio"
+                target="_blank"
+                class="button button-flex button-small portfolio-button"
+              >Project Link
+                <i class="fa-solid fa-arrow-right button-icon"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Experience-->
+      <section class="section">
+        <h2 class="section-title">Experience</h2>
+        <span class="section-subtitle">My professional journey</span>
+        
+        <div class="education-container container">
+          <div class="education-section">
+            <div class="education-content education-active" data-content id="experience">
+              <div class="education-data">
+                <div class="education-info">
+                  <h3 class="education-title">Data Analyst Intern at Movi Company</h3>
+                  <span class="education-subtitle">Company Finance Services</span>
+                  <div class="education-date">Feb 2024 - May 2024</div>
+                  <div class="education-details">
+                    <p>+ Python ...</p>
+                    <p>+ </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Education--> 
+      <section class="section">
+        <h2 class="section-title">Education Journey</h2>
+        <span class="section-subtitle">My academic path</span>
+      
+        <div class="education-container container">
+          <div class="education-section">
+            <div class="education-content education-active" data-content id="education">
+              
+              <div class="education-data">
+                <div class="education-info">
+                  <h3 class="education-title">Bachelor of Data Science</h3>
+                  <span class="education-subtitle">University of Science - HCMUS</span>
+                  <div class="education-date">2021-2025</div>
+                  <div class="education-details">
+                    <p>+ Coursework: Data Structures and Algorithms, Database Management Systems, Artificial Intelligence, ...</p>
+                    <p>+ Activities: Organized Datathon Competitions.</p>
+                  </div>
+                </div>
+              </div>
+      
+              <!-- Education 2 -->
+              <div class="education-data">
+                <div class="education-info">
+                  <h3 class="education-title">Majors in Chemistry</h3>
+                  <span class="education-subtitle">Tien Giang High School for the Gifted</span>
+                  <div class="education-date">2018-2021</div>
+                  <div class="education-details">
+                    <p>+ Achieved scholarship for all semesters</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- skills and qualification  -->
+      <section class="skills section" id="skills">
+        <h2 class="section-title">Skills</h2>
+        <span class="section-subtitle">My Technical Skills</span>
+        <div class="skills-content container">
+          <div class="skills-name">Python(Numpy, Pandas, Ski-Learn)</div>
+          <div class="skills-name">React JS</div>
+          <div class="skills-name">Tailwind CSS</div>
+          <div class="skills-name">Bootstrap</div>
+          <div class="skills-name">CSS</div>
+          <div class="skills-name">SASS</div>
+          <div class="skills-name">Figma</div>
+          <div class="skills-name">Node JS</div>
+          <div class="skills-name">Express JS</div>
+          <div class="skills-name">MongoDB</div>
+          <div class="skills-name">Photoshop</div>
+          <div class="skills-name">Python</div>
+        </div>
+      
+      <!-- contact me  -->
+      <section class="contact section" id="contact">
+        <h2 class="section-title">Contact me</h2>
+        <span class="section-subtitle">Get in touch</span>
+
+        <div class="contact-container container grid">
+          <div>
+            <div class="contact-info">
+              <i class="fa-regular fa-envelope contact-icon"></i>
+              <div>
+                <h3 class="contact-title">Email</h3>
+                <a
+                  href="mailto:levobaotram@gmail.com"
+                  target="_blank"
+                  class="contact-subtitle"
+                  >levobaotram@gmail.com</a
+                >
+              </div>
+            </div>
+            <div class="contact-info">
+              <i class="fa-brands fa-linkedin-in contact-icon"></i>
+              <div>
+                <h3 class="contact-title">Linkedin</h3>
+                <a
+                  class="contact-subtitle"
+                  href="https://www.linkedin.com/in/bao-tram-le/"
+                  target="_blank"
+                  >@tramle</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- footer  -->
+      <footer class="footer">
+        <div class="footer-bg">
+          <div class="footer-container container grid">
+            <div>
+              <h1 class="footer-title">Tram Le</h1>
+              <span class="footer-subtitle">Data Analyst</span>
+            </div>
+            <ul class="footer-links">
+              <li>
+                <a href="#about" class="footer-link">Resume</a>
+              </li>
+              <li>
+                <a href="#portfolio" class="footer-link">Portfolio</a>
+              </li>
+              <li>
+                <a href="#contact" class="footer-link">Contact</a>
+              </li>
+            </ul>
+
+            <div class="footer-socials">
+              <a
+                href="https://www.linkedin.com/in/bao-tram-le/"
+                target="_blank"
+                class="footer-social"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a
+                href="https://github.com/lvbaotram"
+                target="_blank"
+                target="_blank"
+                class="footer-social"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <p class="footer-copy"></p>
+        </div>
+      </footer>
+    </main>
+
+    <a href="#home" class="scrollup" id="scroll-up">
+      <i class="fa-solid fa-arrow-up scroll-up-icon"></i>
+    </a>
+    <script src="Libraries/swiper-bundle.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/9b634c15bd.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
