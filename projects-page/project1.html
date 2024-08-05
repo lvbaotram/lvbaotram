@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Analysis for Superstore</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+        }
+        .sidebar {
+            width: 20%;
+            padding: 20px;
+            background: #fff;
+            border-right: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: 100vh;
+            overflow-y: auto;
+            position: fixed;
+            border-radius: 10px;
+        }
+        .sidebar a {
+            color: #007BFF;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .main-wrapper {
+            width: 80%;
+            margin-left: calc(20% + 0.5cm);
+            padding: 40px 20px 20px 40px;
+            box-sizing: border-box;
+        }
+        .main-content {
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ADD8E6; /* Màu xanh dương nhạt */
+            color: #333;
+            padding: 20px;
+            border-bottom: #0056b3 3px solid;
+            border-radius: 10px;
+        }
+        header h1 {
+            margin: 0;
+            color: #333; /* Màu chữ của header h1 */
+        }
+        .header-icons a {
+            margin-left: 15px;
+            color: #333;
+            text-decoration: none;
+        }
+        .header-icons a:hover {
+            text-decoration: underline;
+        }
+        .header-home {
+            display: flex;
+            align-items: center;
+        }
+        .header-home img {
+            margin-right: 10px;
+        }
+        h1, h2, h3, h4 {
+            margin-top: 0;
+        }
+        .analysis-section {
+            margin-bottom: 20px;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding: 0;
+            color: #808080; /* Màu chữ xám */
+        }
+        .toc li {
+            margin-bottom: 10px;
+        }
+        .toc a.active {
+            font-weight: bold;
+        }
+    </style>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var sections = document.querySelectorAll('.analysis-section');
+            var tocLinks = document.querySelectorAll('.toc a');
+
+            window.addEventListener('scroll', function() {
+                var currentSection = '';
+
+                sections.forEach(function(section) {
+                    var sectionTop = section.offsetTop;
+                    var sectionHeight = section.clientHeight;
+                    if (window.pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                tocLinks.forEach(function(link) {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').slice(1) === currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="header-home">
+        <img src="home-icon.png" alt="Home" width="20" height="20">
+        <a href="../index.html" class="back-button">Back to Home</a>
+    </div>
+    <h1>PW Mart Campaign Analysis</h1>
+    <div class="header-icons">
+        <a href="https://github.com/lvbaotram" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/bao-tram-le/" target="_blank">LinkedIn</a>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <nav class="sidebar toc">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#background">Background</a></li>
+            <li><a href="#problem">Problem</a></li>
+            <li><a href="#objective">Objective</a></li>
+            <li><a href="#data-analysis-demography">Data Analysis: Demography</a></li>
+            <li><a href="#demography-correlation-test">Demography Correlation Test</a></li>
+            <li><a href="#data-analysis-campaign-tools">Data Analysis: Campaign Tools</a></li>
+            <li><a href="#conclusion-recommendation">Conclusion and Recommendation</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-wrapper">
+        <div class="main-content">
+            <section id="background" class="analysis-section">
+                <h2>Background</h2>
+                <p>There’s a Supermarket in the US, called PW Mart (fictional). They sell many products ranging from meats, fish, fruits, sweets, liquors, even golds. They have several channels of purchase: offline store, web store, or catalog store. They also have a membership program to record customer data.</p>
+                <p>Usually, Supermarket runs campaigns to boost their sales and keep their customers engaged. Campaigns are typically season or theme-based and include discounted items to highlight the campaign's concept.</p>
+                <p>Over the last year, PW Mart held a series of campaigns six times. They cannot tell whether the campaigns are working well or not. They just run the campaigns as they should be run. They already record customer data based on demographics, purchasing behavior, and campaign participation from their membership data for further analysis.</p>
+                <p>PW Mart feels that their campaigns are running on auto-pilot. The participation seems stagnant and only captures a small percentage of their total customers. They want to run the next campaign with a more tailored strategy based on experience data.</p>
+            </section>
+
+            <section id="problem" class="analysis-section">
+                <h2>Problem</h2>
+                <p>The main problem is low campaign participation. Only 1 out of 4 people have participated, and the participation rate is only 1.6x, meaning most participants only participated once during the six campaigns. If you look at participation per campaign, it’s only 1 out of 13 people who participated in each campaign.</p>
+            </section>
+
+            <section id="objective" class="analysis-section">
+                <h2>Objective</h2>
+                <p>To best formulate the next campaign, we should evaluate our campaign performance and compare it to our data in general. By then, we might conclude and answer these key questions that shape a campaign:</p>
+                <ul>
+                    <li>Based on experience, evaluate campaign participation.</li>
+                    <li>Based on demographics, what’s the best target audience?</li>
+                    <li>Based on experience, is a discount needed?</li>
+                    <li>If needed, which products should be discounted?</li>
+                    <li>What channel of purchase should we integrate more into the campaign?</li>
+                </ul>
+            </section>
+
+            <section id="data-analysis-demography" class="analysis-section">
+                <h2>Data Analysis: Demography</h2>
+                <p>We analyzed the proportion of the population per demography, proportion per demography per campaign, participation rates per demography, and interest in participation per campaign.</p>
+
+                <h3>Generation Analysis</h3>
+                <!-- Add generation analysis content here -->
+
+                <h3>Education Analysis</h3>
+                <!-- Add education analysis content here -->
+
+                <h3>Marital Analysis</h3>
+                <!-- Add marital analysis content here -->
+
+                <h3>Economic Class Analysis</h3>
+                <!-- Add economic class analysis content here -->
+
+                <h3>Family Analysis</h3>
+                <!-- Add family analysis content here -->
+            </section>
+
+            <section id="demography-correlation-test" class="analysis-section">
+                <h2>Demography Correlation Test</h2>
+                <p>From the analysis, we see that if the population is higher, the participant count is also higher. We should target higher populations to get more participants for the 7th campaign. However, if we try to calculate the sample based on all highest classes per demography combined, we only get 132 people at max. This means the demography class should not be treated equally but with priority.</p>
+            </section>
+
+            <section id="data-analysis-campaign-tools" class="analysis-section">
+                <h2>Data Analysis: Campaign Tools</h2>
+                <h3>Discount Analysis</h3>
+                <p>From the analysis, we conclude that almost everyone has ever bought at a discount, but the rate of purchase is quite small, only 1 out of 5 purchases. Discount is a good tool to attract participants but should meet the needs of the top demography.</p>
+
+                <h3>Channel of Purchase</h3>
+                <p>From the analysis, we conclude that almost everyone has bought from Store and Web. All favored Store as the main channel of purchase. Store is the best channel of purchase followed by Web.</p>
+            </section>
+
+            <section id="conclusion-recommendation" class="analysis-section">
+                <h2>Conclusion and Recommendation</h2>
+                <p>We already know which demography classes are the best for audience targeting and how the last 6 campaigns went. We can conclude and recommend the PW Mart Marketing/Campaign Team to:</p>
+                <ul>
+                    <li>Aim for higher population (based on correlation test).</li>
+                    <li>Make audience priority:
+                        <ul>
+                            <li>Lower Middle Class (75%)</li>
+                            <li>Family (72%)</li>
+                            <li>Couple — Married (39%) and Together (26%) = (65%)</li>
+                            <li>Graduation (50%)</li>
+                            <li>Gen X (48%)</li>
+                        </ul>
+                    </li>
+                    <li>Integrate discounts into the campaign with items that meet the needs of the top demography.</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
