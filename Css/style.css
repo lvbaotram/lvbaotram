@@ -106,7 +106,8 @@
   margin-left: 5px;
 }
 
-.section-title, .section-subtitle {
+.section-title,
+.section-subtitle {
   text-align: center;
 }
 
@@ -147,7 +148,8 @@
   flex: 1; /* Allow the content to stretch and fill the available space */
 }
 
-.section-title, .section-subtitle {
+.section-title,
+.section-subtitle {
   text-align: center;
   width: 100%; /* Ensure they span the full width */
 }
@@ -163,7 +165,6 @@
   align-items: center;
 }
 /*project*/
-
 
 /*education*/
 .section {
@@ -221,9 +222,9 @@ body.dark-mode {
 }
 
 /* Màu chữ trong light mode */
-.education-data, 
-.education-info, 
-.education-title, 
+.education-data,
+.education-info,
+.education-title,
 .education-subtitle {
   color: #000;
 }
@@ -268,11 +269,11 @@ body.dark-mode {
 }
 /* about description */
 .about-description {
-  color: #666/* Chọn màu xám trắng */
+  color: #666; /* Chọn màu xám trắng */
 }
 /* home description*/
 .home-description {
-  color: #666/* Chọn màu xám trắng */
+  color: #666; /* Chọn màu xám trắng */
 }
 /* dark color scheme  */
 body.dark-theme {
@@ -925,15 +926,19 @@ img {
 
 @media screen and (max-width: 768px) {
   .portfolio-container {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
 }
 
 @media screen and (max-width: 480px) {
   .portfolio-container {
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
   }
 }
 /* testimonial  */
